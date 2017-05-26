@@ -25,6 +25,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.amitupadhyay.faceauth.MainActivity;
 import com.amitupadhyay.faceauth.R;
 import com.yalantis.ucrop.view.UCropView;
 
@@ -206,7 +207,9 @@ public class ResultActivity extends BaseActivity {
                     public void run() {
                         // On complete
                         progressDialog.dismiss();
-                        finish();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                         Toast.makeText(ResultActivity.this, "Image Saved Successfully", Toast.LENGTH_SHORT).show();
 
                     }

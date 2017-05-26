@@ -72,6 +72,7 @@ public class SelectImageActivity extends AppCompatActivity {
     // When the button of "Take a Photo with Camera" is pressed.
     public void takePhoto(View view) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
         if(intent.resolveActivity(getPackageManager()) != null) {
             // Save the photo taken to a temporary file.
             File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -85,7 +86,4 @@ public class SelectImageActivity extends AppCompatActivity {
             }
         }
     }
-
-
-
 }
