@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.amitupadhyay.faceauth.cropwork.SampleActivity;
 import com.amitupadhyay.faceauth.helper.ImageHelper;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -107,7 +108,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public void goToAddPersonActivity(View view) {
-        startActivity(new Intent(MainActivity.this, AddPersonActivity.class));
+        Intent intent = new Intent(this, SampleActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("FROM_ACTIVITY", "AMIT");
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     public void verifyTheImage(View view) {

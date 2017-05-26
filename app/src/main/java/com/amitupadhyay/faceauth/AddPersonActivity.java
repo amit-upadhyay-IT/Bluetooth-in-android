@@ -7,14 +7,15 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.amitupadhyay.faceauth.cropwork.BaseActivity;
+import com.amitupadhyay.faceauth.cropwork.SampleActivity;
 import com.amitupadhyay.faceauth.helper.ImageHelper;
 
-public class AddPersonActivity extends AppCompatActivity {
+public class AddPersonActivity extends BaseActivity {
 
     // Flag to indicate which task is to be performed.
     private static final int REQUEST_SELECT_IMAGE = 0;
@@ -32,11 +33,14 @@ public class AddPersonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_person);
         sharedPreferences = getSharedPreferences("person_image", Context.MODE_PRIVATE);
+
     }
+
+
 
     // Called when the "Select Image" button is clicked.
     public void selectImage(View view) {
-        Intent intent = new Intent(this, SelectImageActivity.class);
+        Intent intent = new Intent(this, SampleActivity.class);
         startActivityForResult(intent, REQUEST_SELECT_IMAGE);
     }
 
